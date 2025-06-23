@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Вариант с двумя кнопками </h1>
+
+  <div class="container" id="text" style="width: 200px;">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa numquam labore inventore aliquid? Minima veritatis
+      dolor veniam praesentium laudantium culpa eius facilis cumque? Non necessitatibus veritatis quaerat exercitationem
+      eveniet sequi!</p>
+  </div>
+
+
+
+  <button type="button" class="btn-show active" onclick="showText(); return false;">Показать</button>
+  <button type="button" class="btn-hine" onclick="hideText()">Скрыть</button>
+
+  <script>
+
+    function showText() {
+      document.getElementById('text').style.display = 'block';
+    }
+
+    function hideText() {
+      document.getElementById('text').style.display = 'none';
+
+    }
+  </script>
+
+
+
+
+
+  <h1>Вариант с переключением </h1>
+
+  <div id="text2" style="display: none; width: 200px;">
+    <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Маленький большого буквоград
+      свою грамматики маленькая эта приставка пустился, диких, реторический сих, власти наш текстов несколько агентство
+      текст переулка залетают?</p>
+  </div>
+  <button type="button" id="toggle-btn" onclick="toggleText()">Показать</button>
+
+  <script>
+
+    function toggleText() {
+      const text = document.getElementById('text2');
+      const btn = document.getElementById('toggle-btn');
+
+      if (text.style.display === 'none') {
+        text.style.display = 'block';
+        btn.textContent = 'Скрыть';
+      } else {
+        text.style.display = 'none';
+        btn.textContent = 'Показать';
+      }
+    }
+
+  </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
