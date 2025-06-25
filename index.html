@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -19,20 +25,26 @@
 
 
 
-  <button type="button" class="btn-show active" onclick="showText(); return false;">Показать</button>
-  <button type="button" class="btn-hine" onclick="hideText()">Скрыть</button>
+    <button id="button1">Кнопка 1</button>
+    <button id="button2">Скрыть / Показать</button>
 
-  <script>
+    <script>
+        let button1Clicked = false;
+        const text = document.getElementById('text');
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2');
 
-    function showText() {
-      document.getElementById('text').style.display = 'block';
-    }
+        button1.addEventListener('click', function() {
+            button1Clicked = true;
+        });
 
-    function hideText() {
-      document.getElementById('text').style.display = 'none';
-
-    }
-  </script>
+        button2.addEventListener('click', function() {
+            if (button1Clicked) {
+                text.classList.toggle('hidden');
+                button1Clicked = false;
+            }
+        });
+    </script>
 
 
 
